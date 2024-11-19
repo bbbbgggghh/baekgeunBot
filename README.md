@@ -1,4 +1,4 @@
-# discord-music-bot
+# baekgeunBot
 디스코드 음악 봇
 
 
