@@ -53,33 +53,22 @@ class play:
             await self.play_next(ctx)
 
     async def play_next(self, ctx):
-        if not ctx.voice_client:
-            voice_channel = ctx.author.voice.channel if ctx.author.voice else None
-            if voice_channel:
-                await voice_channel.connect()
-            else:
-                await ctx.send("채널 입장하고 ㄱㄱ")
-                return
-        try:
-            if self.queue and not self.is_stopping:
-                url, title = self.queue.pop(0)
-                self.current_song = title
-                source = await discord.FFmpegOpusAudio.from_probe(url, **FFMPEG_OPTIONS)
-                ctx.voice_client.play(source, after=lambda _: self.client.loop.create_task(self.play_next(ctx)))
-                await ctx.send(f'**{title}** 재생 중')
+        if self.queue and not self.is_stopping:
+            url, title = self.queue.pop(0)
+            self.current_song = title
+            source = await discord.FFmpegOpusAudio.from_probe(url, **FFMPEG_OPTIONS)
+            ctx.voice_client.play(source, after=lambda _: self.client.loop.create_task(self.play_next(ctx)))
+            await ctx.send(f'**{title}** 재생 중')
 
-                if self.repeat:
-                    self.queue.append((url, title))
+            if self.repeat:
+                self.queue.append((url, title))
 
-                if self.playlist:
-                    await self.download_next_song(ctx)
+            if self.playlist:
+                await self.download_next_song(ctx)
 
-                if self.autoplay:
-                    await self.autoplay_recommended(ctx)
+            if self.autoplay:
+                await self.autoplay_recommended(ctx)
 
-            elif not self.queue and not ctx.voice_client.is_playing():
-                self.current_song = None
-                await ctx.send("재생목록 없음")
-        except Exception as e:
-            print(e)
-            await self.play_next(ctx)
+        elif not self.queue and not ctx.voice_client.is_playing():
+            self.current_song = None
+            await ctx.send("재생목록 없음")
