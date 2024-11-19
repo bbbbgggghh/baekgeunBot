@@ -79,5 +79,5 @@ class play:
         except Exception as e:
             print(e)
             await ctx.send("서버와 연결이 끊어짐. 봇 재실행...")
-            os.system('tmux new-session -d "python3 /home/trueju0407/discordbot/main.py"')
+            os.system('tmux new-session -d "python3 /mydir/main.py"')
             os.system('tmux kill-session -t $(tmux display-message -p "#S")')
