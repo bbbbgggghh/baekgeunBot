@@ -37,13 +37,22 @@
 # 필요 패키지 및 파이썬 버전
 
 Python 3.11.7
+
 Python 3.11.10 (google cloud platform)
 
+
 ﻿beautifulsoup4==4.12.3
+ 
 discord==2.3.2
+
 discord.py==2.4.0
+
 ffmpeg==1.4
+
 lxml==5.3.0
+
 PyNaCl==1.5.0
+
 selenium==4.26.1
+
 yt-dlp==2024.11.4
