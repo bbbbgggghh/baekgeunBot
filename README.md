@@ -34,11 +34,13 @@
 
 //
 
-# 필요 패키지 및 파이썬 버전
+#### 필요 패키지 및 파이썬 버전
 
 Python 3.11.7
 
 Python 3.11.10 (google cloud platform)
+
+
 
 
 ﻿beautifulsoup4==4.12.3
