@@ -26,7 +26,7 @@ class play:
                     await self.download_next_song(ctx)
 
                 else:
-                    with yt_dlp.YoutubeDL({'format': 'bestaudio', 'buffer-size': '1M'}) as ydl:
+                    with yt_dlp.YoutubeDL({'format': 'bestaudio', 'buffer-size': '2M'}) as ydl:
                         info = ydl.extract_info(search, download=False) if "https://" in search else ydl.extract_info(f"ytsearch:{search}", download=False)
                         if 'entries' in info:
                             info = info['entries'][0]

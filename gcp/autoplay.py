@@ -133,7 +133,7 @@ class autoplay:
                     if len(self.prev_title) > 50:
                         self.prev_title.pop(0)
 
-                    with yt_dlp.YoutubeDL({'format': 'bestaudio', 'buffer-size': '1M'}) as ydl:
+                    with yt_dlp.YoutubeDL({'format': 'bestaudio', 'buffer-size': '2M'}) as ydl:
                         info = ydl.extract_info(self.current_url, download=False)
                         url = info['url']
                         title = info['title']

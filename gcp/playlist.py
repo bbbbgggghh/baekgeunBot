@@ -31,7 +31,7 @@ class playlist:
                 'playliststart': start_index,
                 'playlistend': start_index,
                 'ignoreerrors': True,
-                'buffer-size': '1M'
+                'buffer-size': '2M'
             }
             async with ctx.typing():
                 with yt_dlp.YoutubeDL(YDL_OPTIONS) as ydl:
