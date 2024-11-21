@@ -15,7 +15,7 @@ class autoplay:
             self.autoplay_try = 0
             await ctx.send("추천 곡 탐색 실패")
             return
-        if hasattr(self, 'is_crawling') and self.is_crawling:
+        if self.is_crawling:
                 self.is_crawling = False
                 return
         self.is_crawling = True
