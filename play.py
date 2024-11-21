@@ -47,7 +47,6 @@ class play:
                             elif "https://" in search:
                                 info = search + "&gl=JP"
                             self.current_url = info
-                            await self.play_next(ctx)
 
         if not ctx.voice_client.is_playing():
             await self.play_next(ctx)
