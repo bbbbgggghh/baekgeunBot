@@ -30,7 +30,7 @@ class autoplay:
             options.add_argument('--incognito')
             options.add_argument('--disable-gpu')
             options.add_argument('--lang=ja')
-            options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134')
+            options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36')
 
             try:
                 driver = await asyncio.get_running_loop().run_in_executor(
