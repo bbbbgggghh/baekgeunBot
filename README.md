@@ -34,27 +34,25 @@
 
 //
 
-#### 필요 패키지 및 파이썬 버전
+#### 파이썬 버전
 
 Python 3.11.7
 
 Python 3.11.10 (google cloud platform)
 
 
+#### 라이브러리
 
-
-﻿beautifulsoup4==4.12.3
+beautifulsoup4
  
-discord==2.3.2
+discord
 
-discord.py==2.4.0
+ffmpeg
 
-ffmpeg==1.4
+lxml
 
-lxml==5.3.0
+PyNaCl
 
-PyNaCl==1.5.0
+selenium
 
-selenium==4.26.1
-
-yt-dlp==2024.11.4
+yt-dlp
